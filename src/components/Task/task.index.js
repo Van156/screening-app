@@ -1,4 +1,5 @@
 import { View, Text } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 import styles from './task.styles';
 
@@ -22,7 +23,8 @@ const Task = props => {
       {
         props.deadline && (
           <View style={styles.deadline}>
-            <Text style={styles.deadlineText}>Deadline: {props.deadline}</Text>
+            <FontAwesome5 name="calendar-alt" style={styles.calendarIcon}/>
+            <Text style={styles.deadlineText}>{props.deadline}</Text>
           </View>
         )
       }

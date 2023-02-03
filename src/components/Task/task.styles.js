@@ -16,7 +16,7 @@ const styles = ScaledSheet.create({
   itemContent: {
     flexDirection: 'row',
     alignItems: 'center',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   status: {
     width: '8@s',
@@ -31,12 +31,21 @@ const styles = ScaledSheet.create({
     color: '#000',
     fontSize: '12@s',  
     fontWeight: 'bold',
+    flex: 1,
+    textAlign: 'left'
   },
   deadline: {
     paddingTop: '5@s',
-    alignItems: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   deadlineText: {
+    color: '#b8b8b8',
+    fontSize: '10@s',
+    fontWeight: 'bold',
+    marginLeft: '3@s',
+  },
+  calendarIcon: {
     color: '#b8b8b8',
     fontSize: '10@s',
     fontWeight: 'bold',
