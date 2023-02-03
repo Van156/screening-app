@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TouchableOpacity, View, Text } from 'react-native';
+import { TouchableOpacity, View, SafeAreaView } from 'react-native';
 import Header from '../../components/Header/header.index';
 import Settings from '../../components/Settings/settings.index';
 
@@ -14,18 +14,20 @@ const settings = [
 
 const SettingsView = () => {
     return (
-        <View style={styles.wrapper}>
-            <Header text="Settings" />
-            {
-                settings.map((item, index) => (
-                    <Settings
-                        key={index}
-                        description={item.description}
-                        checkboxValues={item.checkboxValues}
-                    />
-                ))
-            }
-        </View>
+        <SafeAreaView>
+            <View style={styles.wrapper}>
+                <Header text="Settings" />
+                {
+                    settings.map((item, index) => (
+                        <Settings
+                            key={index}
+                            description={item.description}
+                            checkboxValues={item.checkboxValues}
+                        />
+                    ))
+                }
+            </View>
+        </SafeAreaView>
     )
 }
 
