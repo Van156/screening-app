@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import Checkbox from 'expo-checkbox';
-import Header from '../Header/header.index';
+import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './settings.styles';
 
 const Settings = props => {
-    const [checkboxStates, setCheckboxStates] = useState(Array(props?.checkboxValues.length).fill(false));
+    const [checkboxStates, setCheckboxStates] = useState(useSelector(state => state.checkboxReducer));
+    const dispatch = useDispatch();
 
     const handleSelection = (index) => {
         const newCheckboxStates = [...checkboxStates];
         newCheckboxStates[index] = !newCheckboxStates[index];
         setCheckboxStates(newCheckboxStates);
+        dispatch({ type: 'SET_CHECKBOX', payload: newCheckboxStates });
     }
 
     return (

@@ -1,11 +1,14 @@
-
-import { configureStore, combineReducers, applyMiddleware } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+
 import taskReducer from '../reducers/taskReducer';
 import checkboxReducer from '../reducers/checkboxReducer';
 
-const rootReducer = combineReducers({ checkboxReducer, taskReducer });
+const rootReducer = combineReducers({
+    taskReducer,
+    checkboxReducer
+});
 
-const Store = configureStore(rootReducer, applyMiddleware(thunk));
+const Store = createStore(rootReducer);
 
 export default Store;

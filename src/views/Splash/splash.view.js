@@ -4,7 +4,14 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 import styles from './splash.styles';
 
-const Splash = () => {
+const Splash = ({ navigation }) => {
+
+    useEffect(() => {
+        setTimeout(() => {
+            navigation.navigate('Home');
+        }, 2000);
+    }, []);
+    
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
