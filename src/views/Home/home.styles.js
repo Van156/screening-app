@@ -25,13 +25,12 @@ const styles = ScaledSheet.create({
     },
     footer: {
         position: 'absolute',
-        bottom: '2%',
+        bottom: '0@s',
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-        padding: '10@s',
+        padding: '15@s',
         justifyContent: 'flex-end',
-        backgroundColor: '#000',
     },
 });
 

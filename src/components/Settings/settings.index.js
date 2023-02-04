@@ -3,17 +3,18 @@ import { View, Text } from 'react-native';
 import Checkbox from 'expo-checkbox';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { selectCheckbox, setCheckbox } from '../../context/slices/setting.slice';
+
 import styles from './settings.styles';
 
 const Settings = props => {
-    const [checkboxStates, setCheckboxStates] = useState(useSelector(state => state.checkboxReducer));
+    const checkboxStates = useSelector(state => selectCheckbox(state));
     const dispatch = useDispatch();
 
     const handleSelection = (index) => {
         const newCheckboxStates = [...checkboxStates];
         newCheckboxStates[index] = !newCheckboxStates[index];
-        setCheckboxStates(newCheckboxStates);
-        dispatch({ type: 'SET_CHECKBOX', payload: newCheckboxStates });
+        dispatch(setCheckbox(newCheckboxStates));
     }
 
     return (

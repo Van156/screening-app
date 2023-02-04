@@ -1,8 +1,10 @@
 import { StyleSheet, View } from 'react-native';
 
-import Home from './src/views/Home/home.view';
-import Settings from './src/views/Settings/settings.view';
 import Splash from './src/views/Splash/splash.view';
+import AddTask from './src/views/Task/addTask.view';
+import LoadTask from './src/views/Task/loadTask.view';
+
+import NavTab from './src/components/NavTab/navTab.index';
 
 import Store from './src/context/stores/Store';
 import { Provider } from 'react-redux';
@@ -18,7 +20,7 @@ export default function App() {
     <Provider store={Store}>
       <View style={styles.container}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Splash">
+          <Stack.Navigator>
             <Stack.Screen
               name="Splash"
               component={Splash}
@@ -27,15 +29,22 @@ export default function App() {
               }}
             />
             <Stack.Screen
-              name="Home"
-              component={Home}
+              name="Main"
+              component={NavTab}
               options={{
                 headerShown: false,
               }}
             />
             <Stack.Screen
-              name="Settings"
-              component={Settings}
+              name="AddTask"
+              component={AddTask}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Task"
+              component={LoadTask}
               options={{
                 headerShown: false,
               }}

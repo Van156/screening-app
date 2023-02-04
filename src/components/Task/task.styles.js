@@ -21,7 +21,7 @@ const styles = ScaledSheet.create({
   status: {
     width: '8@s',
     height: '20@s',
-    backgroundColor: '#55BCF6',
+    backgroundColor: '#10A19D',
     opacity: '0.6@s',
     borderRadius: '5@s',
     marginRight: '10@s',

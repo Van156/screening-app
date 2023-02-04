@@ -3,7 +3,6 @@ import { ScaledSheet } from "react-native-size-matters";
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f8f8f8',
     },
     description: {
         fontSize: '12@s',

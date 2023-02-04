@@ -8,10 +8,10 @@ const Splash = ({ navigation }) => {
 
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate('Home');
+            navigation.navigate('Main');
         }, 2000);
     }, []);
-    
+
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
